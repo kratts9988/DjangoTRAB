@@ -1,0 +1,29 @@
+<!-- projeto_estoque/estoque/templates/estoque/novo_item.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Item</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'estoque/css/estoques.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Novo Item</h2>
+
+        <!-- Cria um formulário com o método de envio POST -->
+        <form method="post">
+            <!-- Adiciona um token CSRF para proteção contra CSRF -->
+            {% csrf_token %}
+
+            <!-- Renderiza o formulário como parágrafos -->
+            {{ form.as_p }}
+
+            <!-- Cria um botão de submissão do formulário -->
+            <button class="button" type="submit">Adicionar</button>
+        </form>
+    </div>
+</body>
+</html>

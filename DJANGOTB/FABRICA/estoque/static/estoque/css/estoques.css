@@ -1,0 +1,109 @@
+/* Reset de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define a fonte padrão */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Container centralizado com largura máxima de 800px */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Estilo dos botões */
+.button {
+    background-color: #3498db; /* Azul Claro */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease; /* Efeito de transição suave */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.button:hover {
+    background-color: #2980b9; /* Azul mais escuro */
+}
+
+/* Estilo para lista de itens */
+.item-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Espaçamento entre os itens da lista */
+.item {
+    margin-bottom: 10px;
+}
+
+/* Estilize os campos de formulário (input e textarea) */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Efeito de transição ao focar */
+}
+
+/* Efeito ao focar nos campos de formulário */
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #3498db; /* Azul Claro */
+}
+
+/* Estilize os links de detalhes */
+a.detalhes {
+    display: inline-block;
+    background-color: #2ecc71; /* Verde Claro */
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease; /* Efeito de transição suave */
+}
+
+/* Efeito ao passar o mouse sobre o link de detalhes */
+a.detalhes:hover {
+    background-color: #27ae60; /* Verde mais escuro */
+}
+
+/* Mantenha o título no topo */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilize os campos de formulário para responsividade */
+@media screen and (max-width: 600px) {
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        width: calc(100% - 16px);
+        padding: 6px;
+        font-size: 14px;
+    }
+}

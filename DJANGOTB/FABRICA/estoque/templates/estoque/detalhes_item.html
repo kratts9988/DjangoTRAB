@@ -1,0 +1,35 @@
+<!-- Define o tipo de documento HTML e o idioma como inglês -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Define o conjunto de caracteres UTF-8 e a escala inicial da página -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Define o título da página -->
+    <title>Detalhes do Item</title>
+    <!-- Carrega o arquivo CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'estoque/css/estoques.css' %}" />
+  </head>
+
+  <body class="container">
+    <!-- Cria um cabeçalho -->
+    <h1>Detalhes do Item</h1>
+
+    <!-- Exibe o nome do item -->
+    <p class="item-detail">Nome: <span class="item-info">{{ item.nome }}</span></p>
+
+    <!-- Exibe a descrição do item -->
+    <p class="item-detail">Descrição: <span class="item-info">{{ item.descricao }}</span></p>
+
+    <!-- Exibe a quantidade disponível do item -->
+    <p class="item-detail">Quantidade Disponível: <span class="item-info">{{ item.quantidade }}</span></p>
+
+    <!-- Cria um link para a página de edição do item -->
+    <a href="{% url 'editar_item' item.id %}" class="button">Editar Item</a>
+
+    <!-- Cria um link para a página de confirmação de exclusão do item -->
+    <a href="{% url 'confirmar_exclusao_item' item.id %}" class="button">Excluir Item</a>
+  </body>
+</html>

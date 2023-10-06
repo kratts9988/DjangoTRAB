@@ -1,0 +1,33 @@
+<!-- projeto_estoque/estoque/templates/estoque/confirmar_exclusao_item.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'estoque/css/estoques.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Exclusão</h1>
+
+        <p>
+            Tem certeza de que deseja excluir o item? Esta ação não pode ser desfeita.
+        </p>
+
+        <!-- Cria um formulário com o método de envio POST -->
+        <form action="{% url 'excluir_item' item.id %}" method="post">
+            <!-- Adiciona um token CSRF para proteção contra CSRF -->
+            {% csrf_token %}
+
+            <!-- Cria um botão de submissão do formulário -->
+            <button class="button" type="submit">Confirmar</button>
+
+            <!-- Cria um link para a página de lista de estoque -->
+            <a class="button" href="{% url 'lista_estoque' %}">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

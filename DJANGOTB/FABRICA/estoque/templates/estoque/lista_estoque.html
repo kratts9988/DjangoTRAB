@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Itens em Estoque</title>
+    <!-- Define o título da página -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'estoque/css/estoques.css' %}">
+  </head>
+  <body>
+    
+    <div class="container">
+      <h1>Lista de Itens em Estoque</h1>
+      <!-- Cria um cabeçalho -->
+      <ul class="item-list">
+        {% for item in itens %}
+          <li class="item">
+            {{ item.nome }} - {{ item.descricao }} - {{ item.quantidade }}
+            <!-- Exibe informações do item -->
+            <a class="detalhes" href="{% url 'detalhes_item' id=item.id %}">Detalhes</a>
+            <!-- Cria um link para detalhes do item -->
+          </li>
+        {% endfor %}
+      </ul>
+      <a class="button" href="{% url 'novo_item' %}">Adicionar Novo Item</a>
+      <!-- Cria um link para adicionar um novo item -->
+    </div>
+  </body>
+</html>
+
+<!--Este é um arquivo HTML que será usado para renderizar a lista de itens em estoque.
+    Ele inclui tags HTML para criar a estrutura da página. Além disso, ele utiliza o 
+    Django template language e {{ ... }}) para iterar sobre a lista de itens e gerar o conteúdo 
+    dinamicamente. {{ item.nome }}, {{ item.descricao }}, e {{ item.quantidade }} exibem os 
+    atributos  do item. O link <a> para detalhes do item utiliza a URL nomeada detalhes_item 
+    e passa o id do item como parâmetro. O link para adicionar um novo item utiliza a 
+    URL nomeada novo_item.-->

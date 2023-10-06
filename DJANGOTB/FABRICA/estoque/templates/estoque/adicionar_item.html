@@ -1,0 +1,38 @@
+<!-- Define o tipo de documento HTML -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Define o título da página -->
+    <title>Adicionar Item ao Estoque</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'estoque/css/estoques.css' %}">
+
+</head>
+
+  <body class="container">
+    <!-- Cria um cabeçalho -->
+    <h1>Adicionar Item ao Estoque</h1>
+
+    <!-- Cria um formulário com o método de envio POST -->
+    <form method="post" class="item-form">
+      <!-- Adiciona um token CSRF para proteção contra CSRF -->
+      {% csrf_token %}
+
+      <!-- Renderiza os campos do formulário como parágrafos -->
+      {{ form.as_p }}
+
+      <!-- Cria um botão de submissão do formulário -->
+      <button type="submit" class="button">Adicionar Item</button>
+    </form>
+  </body>
+</html>
+
+<!--Este é um arquivo HTML para a página de adição de um novo item ao estoque. 
+Ele contém tags HTML para criar a estrutura da página. O título da página é definido com 
+<title>Adicionar Item ao Estoque</title>. Há um cabeçalho <h1>Adicionar Item ao Estoque</h1>.
+Em seguida, é criado um formulário <form> com o método POST. Dentro do formulário, 
+é adicionado um token CSRF {% csrf_token %} para proteção contra CSRF. 
+Além disso, {{ form.as_p }} é usado para renderizar os campos do formulário 
+como parágrafos.
+Por fim, é adicionado um botão <button> para permitir ao usuário adicionar 
+um novo item ao estoque.-->

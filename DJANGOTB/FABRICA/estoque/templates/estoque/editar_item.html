@@ -1,0 +1,29 @@
+<!-- projeto_estoque/estoque/templates/estoque/editar_item.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Item do Estoque</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'estoque/css/estoques.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Item do Estoque</h1>
+
+        <!-- Cria um formulário com o método de envio POST -->
+        <form method="post">
+            <!-- Adiciona um token CSRF para proteção contra CSRF -->
+            {% csrf_token %}
+
+            <!-- Renderiza os campos do formulário como parágrafos -->
+            {{ form.as_p }}
+
+            <!-- Cria um botão de submissão do formulário -->
+            <button class="button" type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+</html>
